@@ -599,7 +599,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t</li>\r\n");
       out.write("\r\n");
       out.write("\t\t\t\t\t\t<li>\r\n");
-      out.write("\t\t\t\t\t\t\t<a href=\"gallery.html\">\r\n");
+      out.write("\t\t\t\t\t\t\t<a href=\"PublicPage.do?key=left\">\r\n");
       out.write("\t\t\t\t\t\t\t\t<i class=\"icon-picture\"></i>\r\n");
       out.write("\t\t\t\t\t\t\t\t<span class=\"menu-text\"> 相册 </span>\r\n");
       out.write("\t\t\t\t\t\t\t</a>\r\n");
