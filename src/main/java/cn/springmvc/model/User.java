@@ -1,30 +1,63 @@
-package cn.springmvc.model;
- 
- 
-/**
- * 用户表
- */
+package cn.springmvc.model; 
+
 public class User {
- 
-    private int id;
-    private int state;
-    private String nickname;
-    public int getId() {
-        return id;
+    private Integer userId;
+
+    private String username;
+
+    private String password;
+
+    private String sex;
+
+    private String birthday;
+
+    private Integer phone;
+
+    public Integer getUserId() {
+        return userId;
     }
-    public void setId(int id) {
-        this.id = id;
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
-    public int getState() {
-        return state;
+
+    public String getUsername() {
+        return username;
     }
-    public void setState(int state) {
-        this.state = state;
+
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
-    public String getNickname() {
-        return nickname;
+
+    public String getPassword() {
+        return password;
     }
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday == null ? null : birthday.trim();
+    }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Integer phone) {
+        this.phone = phone;
     }
 }

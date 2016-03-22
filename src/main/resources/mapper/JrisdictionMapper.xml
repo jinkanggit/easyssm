@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.springmvc.dao.JrisdictionMapper" >
+  <resultMap id="BaseResultMap" type="cn.springmvc.dao.JrisdictionDao" >
+    <id column="jrisdiction_id" property="jrisdictionId" jdbcType="INTEGER" />
+    <result column="jrisdiction_name" property="jrisdictionName" jdbcType="VARCHAR" />
+    <result column="jrisdiction_info" property="jrisdictionInfo" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    jrisdiction_id, "jrisdiction_name", "jrisdiction_info"
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_jrisdiction
+    where jrisdiction_id = #{jrisdictionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_jrisdiction
+    where jrisdiction_id = #{jrisdictionId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.springmvc.model.Jrisdiction" >
+    insert into tb_jrisdiction (jrisdiction_id, "jrisdiction_name", "jrisdiction_info"
+      )
+    values (#{jrisdictionId,jdbcType=INTEGER}, #{jrisdictionName,jdbcType=VARCHAR}, #{jrisdictionInfo,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.springmvc.model.Jrisdiction" >
+    insert into tb_jrisdiction
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="jrisdictionId != null" >
+        jrisdiction_id,
+      </if>
+      <if test="jrisdictionName != null" >
+        "jrisdiction_name",
+      </if>
+      <if test="jrisdictionInfo != null" >
+        "jrisdiction_info",
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="jrisdictionId != null" >
+        #{jrisdictionId,jdbcType=INTEGER},
+      </if>
+      <if test="jrisdictionName != null" >
+        #{jrisdictionName,jdbcType=VARCHAR},
+      </if>
+      <if test="jrisdictionInfo != null" >
+        #{jrisdictionInfo,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.springmvc.model.Jrisdiction" >
+    update tb_jrisdiction
+    <set >
+      <if test="jrisdictionName != null" >
+        "jrisdiction_name" = #{jrisdictionName,jdbcType=VARCHAR},
+      </if>
+      <if test="jrisdictionInfo != null" >
+        "jrisdiction_info" = #{jrisdictionInfo,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where jrisdiction_id = #{jrisdictionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.springmvc.model.Jrisdiction" >
+    update tb_jrisdiction
+    set "jrisdiction_name" = #{jrisdictionName,jdbcType=VARCHAR},
+      "jrisdiction_info" = #{jrisdictionInfo,jdbcType=VARCHAR}
+    where jrisdiction_id = #{jrisdictionId,jdbcType=INTEGER}
+  </update>
+</mapper>

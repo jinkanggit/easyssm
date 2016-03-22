@@ -1,9 +1,9 @@
-package cn.springmvc.service;
+package cn.springmvc.dao;
  
 import cn.springmvc.model.User;
  
-
-public interface UserService {
+ 
+public interface UserDao {
  
     /**
      * 添加新用户
@@ -21,4 +21,5 @@ public interface UserService {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+     
 }
