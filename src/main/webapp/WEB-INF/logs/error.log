@@ -3264,3 +3264,4 @@ Caused by: java.lang.NoClassDefFoundError: cn/springmvc/dao/UserDAO (wrong name:
 	... 65 more
 2016-03-22 15:12:43 [ main:632 ] - [ ERROR ] maxIdle is deprecated
 2016-03-22 15:14:32 [ main:627 ] - [ ERROR ] maxIdle is deprecated
+2016-03-22 15:19:14 [ main:852 ] - [ ERROR ] maxIdle is deprecated
